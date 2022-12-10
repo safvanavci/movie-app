@@ -1,0 +1,82 @@
+.introduction {
+  height: 700px;
+  @extend %full;
+  position: relative;
+  .backdrop {
+    img {
+      @extend %full;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      z-index: -2;
+    }
+  }
+  .container {
+    @extend %full;
+    background: linear-gradient($base, #0201094d, $base);
+    padding-top: 50px;
+    .movie {
+      padding: 0 50px;
+      @extend %container;
+      @extend %flex;
+      justify-content: space-between;
+      flex: 1;
+      .overview {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h1 {
+          font-size: 3em;
+        }
+        p {
+          font-size: 1.2em;
+          padding: 10px 0px;
+        }
+        button {
+          background: linear-gradient(45deg, $secondary, $primary);
+          gap: 10px;
+          padding-right: 20px;
+          @extend %flex;
+          @extend %button;
+          border: none;
+        }
+        .flex {
+          @extend %flex;
+          gap: 8px;
+          .imdb {
+            @extend %imdb;
+          }
+          .quality {
+            background-color: $primary;
+            @extend %imdb;
+          }
+        }
+      }
+      .poster {
+        width: 280px;
+        height: 400px;
+        position: relative;
+        scale: (1);
+        transition: all;
+        transition-duration: 400ms;
+        &:hover {
+          scale: (1.1);
+        }
+        img {
+          @extend %full;
+          object-fit: cover;
+        }
+        h1 {
+          @extend %rate;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .poster {
+    display: none;
+  }
+}

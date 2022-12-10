@@ -1,0 +1,37 @@
+@import "react-toastify/dist/ReactToastify.css";
+@import "variables";
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;600;700&display=swap");
+@import "./footer/footer.scss";
+@import "./home/home.scss";
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/css/scrollbar";
+@import "swiper/css/mousewheel";
+@import "movie/movie.scss";
+@import "profile/profile.scss";
+@import "login/login.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  text-decoration: none;
+  border: none;
+}
+body {
+  font-size: 16px;
+  color: $base-200;
+  background-color: $base-100;
+}
+.star {
+  stroke: $primary;
+  stroke-width: 3px;
+}
+.not-found{
+  @extend %container;
+  @extend %flex;
+  justify-content: center;
+  height: 100vh;
+  font-size: 3em;
+}

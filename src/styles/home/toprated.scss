@@ -1,0 +1,42 @@
+.slide {
+  @extend %container;
+  position: relative;
+  overflow-x: clip;
+  height: 350px;
+  .slides {
+    @extend %container;
+    position: absolute;
+    top: -130px;
+    .top-rated {
+      @extend %title;
+    }
+    .movie {
+      width: 200px;
+      position: relative;
+      .rate {
+        @extend %rate;
+      }
+      img {
+        @extend %full;
+        object-fit: contain;
+      }
+      .title {
+        padding: 5px 0;
+        font-size: 1.3em;
+      }
+      .date {
+        font-family: sans-serif;
+        font-size: 9px;
+        color: lightgrey;
+      }
+      .overview {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.9em;
+        margin-top: 10px;
+      }
+    }
+  }
+}

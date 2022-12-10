@@ -1,0 +1,135 @@
+@import "../variables";
+@import "../extends";
+
+.header {
+  background-color: $base;
+  .container {
+    @extend %container;
+    @extend %flex;
+    height: 50px;
+    justify-content: space-between;
+    .logo {
+      @extend %flex;
+      color: $primary;
+      font-size: 2.4em;
+      gap: 4px;
+      h1 {
+        color: $base-200;
+        font-size: 0.7em;
+        padding-top: 4px;
+      }
+    }
+    .sign-up {
+      @extend %button;
+      border-color: $secondary;
+      background-color: $secondary;
+      margin-left: 5px;
+      &:hover {
+        background-color: inherit;
+      }
+    }
+    .sign-in {
+      @extend %button;
+      border-color: $primary;
+      background-color: inherit;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    .search {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+     
+      .deneme{
+        border-radius: 20px;
+        width: 45%;
+        padding: 1px 15px;
+        color: $base-200;
+        height: 30px;
+        font-family: sans-serif;
+        background-color: #4d4d4d;
+        
+        &:focus {
+          outline: 1px solid $secondary;
+        }
+      }
+      .search-bar {
+        width: 45%;
+        padding: 1px 15px;
+        border-radius: 20px 20px 0 0;
+        color: $base-200;
+        height: 30px;
+        font-family: sans-serif;
+        background-color: #4d4d4d;
+
+        &:focus {
+          outline: 1px solid $secondary;
+        }
+      }
+      .hidden-bar{
+        display: none;
+        
+      }
+      .movies-bar{
+        width: 45%;
+        position: absolute;
+        background-color: #4d4d4d;
+        top: 100%;
+        height: fit-content;
+        z-index: 2;
+        border-radius: 0 0 20px 20px;
+        outline: 1px solid $secondary;
+       .movie{
+        padding: 10px 15px;
+        font-size: 1.2em;
+        color: $base-200;
+        &:hover{
+          background-color: $base;
+        }
+       }
+      }
+    }
+    .profile{
+      position: relative;
+      .icon{
+        cursor: pointer;
+      }
+      .popover{
+        padding: 10px 0;
+        position: absolute;
+        background-color: #4d4d4d;
+        border-radius: 10px;
+        width: 150px;
+        z-index: 3;
+        top: 26px;
+        right: 0;
+        font-size: 1.3em;
+        align-items: baseline;
+        @extend %flex;
+        flex-direction: column;
+        .profil{
+          color: $base-200;
+          width: 100%;
+          padding: 7px 10px;
+          &:hover{
+            background-color: $base;
+          }
+        }
+        .logout{
+          color: $base-200;
+          width: 100%;
+          padding: 7px 10px;
+          &:hover{
+            background-color: $base;
+          }
+        }
+      }
+      .popover-hidden{
+        display: none;
+      }
+      
+    }
+  }
+}
